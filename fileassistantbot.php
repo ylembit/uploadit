@@ -4,13 +4,9 @@
 /**
  * UploaditRoBot
  * Simple Telegram bot to generate download link of files and upload files from URL
- * Based on MadelineProto
- * https://github.com/danog/MadelineProto
- * By TheDarkW3b
- * https://t.me/TheDarkW3b
  */
 define('FILES_PATH', __DIR__.'/files');
-define('WEBSERVER_BASE_URL', 'yourdomain.com');
+define('WEBSERVER_BASE_URL', 'https://ylembiturluploadbot.herokuapp.com/');
 define('FILES_EXPIRE_TIME', 24 * 3600); // in seconds
 
 set_time_limit(0);
@@ -140,7 +136,7 @@ class EventHandler extends \danog\MadelineProto\EventHandler
                 }
                 $filesize = $headers['content-length'][0];
                 if ($filesize > 1024 ** 3) {
-                    yield $this->messages->sendMessage(['peer' => $update, 'message' => 'Your file should be snakker than 1 GB.', 'reply_to_msg_id' => $message_id]);
+                    yield $this->messages->sendMessage(['peer' => $update, 'message' => 'Your file should be smaller than 1 GB.', 'reply_to_msg_id' => $message_id]);
 
                     return;
                 }
