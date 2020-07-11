@@ -6,7 +6,7 @@
  * Simple Telegram bot to generate download link of files and upload files from URL
  */
 define('FILES_PATH', __DIR__.'/files');
-define('https://ylembiturluploadbot.herokuapp.com/', 'https://ylembiturluploadbot.herokuapp.com/');
+define('WEBSERVER_BASE_URL', 'https://ylembiturluploadbot.herokuapp.com/');
 define('FILES_EXPIRE_TIME', 24 * 3600); // in seconds
 
 set_time_limit(0);
